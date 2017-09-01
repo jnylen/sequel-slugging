@@ -6,10 +6,10 @@ require 'sequel/plugins/slugging/version'
 Gem::Specification.new do |spec|
   spec.name          = 'sequel-slugging'
   spec.version       = Sequel::Plugins::Slugging::VERSION
-  spec.authors       = ["Chris Hanks"]
-  spec.email         = ['christopher.m.hanks@gmail.com']
+  spec.authors       = ["Chris Hanks", "Joakim Nylén"]
+  spec.email         = ['christopher.m.hanks@gmail.com', 'me@jnylen.nu']
 
-  spec.summary       = %q{Slugs your way to love}
+  spec.summary       = %q{This gem creates human-friendly string.}
   spec.homepage      = 'https://github.com/chanks/sequel-slugging'
   spec.license       = "MIT"
 
