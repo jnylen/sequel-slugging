@@ -1,5 +1,6 @@
 require 'securerandom'
 require 'set'
+require 'babosa'
 
 require 'sequel/plugins/slugging/version'
 
@@ -16,11 +17,7 @@ module Sequel
 
         def slugifier
           @slugifier ||= proc do |string|
-            s = string.downcase
-            s.gsub!(/[^a-z\-_]+/, '-'.freeze)
-            s.gsub!(/-{2,}/, '-'.freeze)
-            s.gsub!(/^-|-$/, ''.freeze)
-            s
+            string.to_slug.normalize.to_s
           end
         end
 
