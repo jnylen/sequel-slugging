@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['christopher.m.hanks@gmail.com', 'me@jnylen.nu']
 
   spec.summary       = %q{This gem creates human-friendly string.}
-  spec.homepage      = 'https://github.com/chanks/sequel-slugging'
+  spec.homepage      = 'https://github.com/jnylen/sequel-slugging'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
