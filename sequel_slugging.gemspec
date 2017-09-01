@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sequel/plugins/slugging/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'sequel-slugging'
+  spec.name          = 'sequel_slugging'
   spec.version       = Sequel::Plugins::Slugging::VERSION
   spec.authors       = ["Chris Hanks", "Joakim Nylén"]
   spec.email         = ['christopher.m.hanks@gmail.com', 'me@jnylen.nu']
