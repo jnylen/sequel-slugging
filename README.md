@@ -1,15 +1,15 @@
 # Sequel::Slugging
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sequel/slugging`. To experiment with that code, run `bin/console` for an interactive prompt.
+Slugging is a plugin for Sequel that creates slugs from names or similar with an built-in uuid fix for duplicates.
 
-TODO: Delete this and the text above, and describe your gem
+This gem is quite similar to `friendly_id`
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sequel-slugging'
+gem 'sequel-slugging', github: 'jnylen/sequel-slugging'
 ```
 
 And then execute:
@@ -22,7 +22,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Please look in the spec folder for examples.
+
+Basically it's just `plugin :slugging, source: :name` where name is the column you want to grab the slug from.
+
+## History
+
+You can keep a slug in history so you can still fetch it when it has changed.
+
+First you need to create a table using this:
+```ruby
+create_table :slug_history do
+  primary_key :id
+  text :slug, null: false
+  integer :sluggable_id, null: false
+  text :sluggable_type, null: false
+  timestamptz :created_at, null: false
+end
+```
+
+Then add `history: :slug_history` to your plugin line for slugging.
 
 ## Development
 
@@ -32,10 +51,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sequel-slugging. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jnylen/sequel-slugging. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
