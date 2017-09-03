@@ -61,4 +61,5 @@ The gem is available as open source under the terms of the [MIT License](http://
 ## Authors
 
 Creator: [Chris Hanks](https://github.com/chanks/sequel-slugging)
+
 Maintainer: [Joakim Nylén](https://github.com/jnylen/sequel_slugging)
