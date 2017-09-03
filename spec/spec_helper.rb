@@ -5,7 +5,7 @@ require 'minitest/hooks'
 
 require 'sequel'
 
-DB = Sequel.connect("postgres:///sequel-slugging-test")
+DB = Sequel.connect("postgres://postgres@localhost/sequel_test")
 
 DB.run 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"'
 
